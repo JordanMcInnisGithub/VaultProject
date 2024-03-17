@@ -104,7 +104,6 @@ function OnboardingForm() {
                     }
                 })
                 .catch((error) => {
-                    console.log("invalid corporation number");
                     setCorporationNumberError("Invalid corporation number");
                 }).then(() => {
                     setIsFieldLoading(false);
@@ -123,6 +122,7 @@ function OnboardingForm() {
                         validator={validators.firstName}
                         id="firstName"
                         error={firstNameError}
+                        placeholder='First Name'
 
                     />
                     <FormField
@@ -130,6 +130,7 @@ function OnboardingForm() {
                         validator={validators.lastName}
                         id="lastName"
                         error={lastNameError}
+                        placeholder='Last Name'
                     />
                 </div>
                 <div className='onboarding-form__phone-number'>
@@ -138,6 +139,7 @@ function OnboardingForm() {
                         validator={validators.phoneNumber}
                         id="phoneNumber"
                         error={phoneNumberError}
+                        placeholder='+1XXXXXXXXXX'
                     />
                 </div>
                 <div className='onboarding-form__corporation-number'>
@@ -146,6 +148,7 @@ function OnboardingForm() {
                         validator={validators.corporationNumber}
                         id="corporationNumber"
                         error={corporationNumberError}
+                        placeholder='Corporation Number'
                     />
                 </div>
                 <button className="onboarding-form__submit" type="submit" disabled={isFormInvalid}>Submit</button>
